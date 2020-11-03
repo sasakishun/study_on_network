@@ -1,0 +1,19 @@
+# python-chrome-driverによるブラウザ作業自動化
+## 環境構築
+- python環境とselenium + python-chrome-driverを用意する
+  - まずpython環境と整える（今回はAnacondaで環境構築）
+  - seleniumのインストール
+    - conda install selenium
+  - python-chrome-driverのインストール
+    - 自身のChromeアプリのバージョン確認
+      - chromeを開く->右上の三つぽちアイコン->ヘルプ->Google Chromeについて->表示されるバージョンんの上位3エリア（xx.x.xxxx.nnのxx.x.xxxx）までメモ
+      - https://chromedriver.chromium.org/downloads からメモしたxx.x.xxxxとマッチするバージョンを確認->これ以降xx.x.xxxx.aaaとする
+    - conda install -c conda-forge python-chromedriver-binary==xx.x.xxxx.aaa
+## プログラム実行
+- 試しにgoogleのホーム画面を開いてみる
+'''
+import chromedriver_binary
+from selenium import webdriver
+driver = webdriver.Chrome()
+driver.get('https://www.google.com/')
+'''
